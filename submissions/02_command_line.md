@@ -1,16 +1,15 @@
 ### Homework exercise
 1. Using `chipotle.tsv` in the `data` subdirectory:
     1. `head chipotle.tsv`
-	The data is describing chipotle orders. Each row contains informaiton ababout each distinct item in each order
-	Columns: (if blank, then assume column_name = description) 
-	* order_id = id given to each order
-	* quantity = for each item in the order, the number of items
-	* item_name
-	* choice_description = customer preferences for each item 
-	* item_price
-    2. How many orders are in the data?
-	`tail chipotle.tsv`
-	1834 orders 
+	The data is describing chipotle orders. Each row contains informaiton ababout each distinct item in each order. Columns: (if blank, then assume column_name = description). 
+		* order_id = id given to each order
+		* quantity = for each item in the order, the number of items
+		* item_name
+		* choice_description = customer preferences for each item 
+		* item_price
+    2. How many orders are in the data?    
+	`tail chipotle.tsv`    
+	1834 orders
     3. How many lines are in the data?
 	`wc chipotle.tst`
 	4623 lines
