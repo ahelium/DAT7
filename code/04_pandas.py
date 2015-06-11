@@ -64,16 +64,23 @@ EXERCISE ONE
 '''
 
 # read drinks.csv into a DataFrame called 'drinks'
+drinks = pd.read_csv('drinks.csv')
 
 # print the head and the tail
+drinks.head()
+drinks.tail()
 
 # examine the default index, data types, and shape
-
+drinks.index
+drinks.dtypes
+drinks.shape
 # print the 'beer_servings' Series
 
+drinks.beer_servings
 # calculate the average 'beer_servings' for the entire dataset
-
+drinks.beer_servings.mean()
 # count the number of occurrences of each 'continent' value and see if it looks correct
+drinks.continent.value_counts()
 
 '''
 Filtering and Sorting

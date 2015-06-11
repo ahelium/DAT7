@@ -56,8 +56,6 @@ burrito_toppings = [row[3].count(',') if "Burrito" in row[2] else "" for row in 
 burrito_toppings_only = filter(None, burrito_toppings)
 average_toppings = sum(burrito_toppings_only)/len(burrito_toppings_only)
 
-
-
 '''
 ADVANCED LEVEL
 PART 6: Create a dictionary in which the keys represent chip orders and
@@ -66,7 +64,21 @@ Expected output: {'Chips and Roasted Chili-Corn Salsa': 18, ... }
 Note: Please take the 'quantity' column into account!
 Optional: Learn how to use 'defaultdict' to simplify your code.
 '''
+# do you mean orders that contain chips? Or the number of times that chips were ordered?
 
+chips_count = [[row[2],row[1]] if "Chips" in row[2] else None for row in data_body]
+chips_only = filter(None, chips_count)
+
+from collections import defaultdict
+
+count_chips_dict = defaultdict(list)
+for chip_type, quantity in chips_only:
+    count_chips_dict[chip_type].append(int(quantity))
+
+final_dict = dict((chip, sum(quantity)) for chip, quantity in count_chips_dict.items())
+
+
+# if it is ok to use a pivot table:
 
 
 '''
