@@ -109,12 +109,14 @@ EXERCISE TWO
 '''
 
 # filter DataFrame to only include European countries
-
+EU = drinks[drinks.continent == 'EU']
 # filter DataFrame to only include European countries with wine_servings > 300
-
+drinks[(drinks.continent == 'EU') & (drinks.wine_servings > 300)]
 # calculate the average 'beer_servings' for all of Europe
-
+EU.beer_servings.mean()
+drinks[drinks.continent == 'EU'].beer_servings.mean()
 # determine which 10 countries have the highest total_litres_of_pure_alcohol
+drinks.sort('total_litres_of_pure_alcohol',ascending=False).head(10)
 
 '''
 Renaming, Adding, and Removing Columns
@@ -151,6 +153,8 @@ drinks.continent.isnull()           # True if missing, False if not missing
 drinks.continent.isnull().sum()     # count the missing values
 drinks.continent.notnull()          # True if not missing, False if missing
 drinks[drinks.continent.notnull()]  # only show rows where continent is not missing
+
+drinks.isnull().sum(axis=1)
 
 # side note: understanding axes
 drinks.sum(axis=0)      # sums "down" the 0 axis (rows)
