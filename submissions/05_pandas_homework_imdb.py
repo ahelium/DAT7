@@ -68,7 +68,11 @@ movies['star_rating'][movies.duration <= 120].mean()
 
 # use a visualization to detect whether there is a relationship between star rating and duration
 movies.plot(kind='scatter',x='star_rating', y='duration')
+
 # calculate the average duration for each genre
+movies.groupby('genre').duration.mean()
+
+
 
 '''
 ADVANCED LEVEL
@@ -79,7 +83,8 @@ ADVANCED LEVEL
 movies.duration.hist(by=movies.content_rating, sharex=True, sharey=True)
 
 # determine the top rated movie (by star rating) for each genre
-movies.groupby('genre').star_rating.max()
+movies.groupby('genre').star_rating.max() # does not give title information
+movies.sort('star_rating', ascending=False).groupby('genre',as_index=False).first()[['title', 'genre','star_rating']]
 
 # check if there are multiple movies with the same title, and if so, determine if they are actually duplicates
 movies[movies.duplicated('title')]
