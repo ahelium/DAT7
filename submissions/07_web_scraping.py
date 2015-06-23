@@ -150,6 +150,8 @@ Finally, convert that list into a DataFrame.
 
 # define a function that accepts an IMDb ID and returns a dictionary of movie information
 from bs4 import BeautifulSoup
+from random import randint
+from time import sleep
 
 def get_movie_info(id):
     r = requests.get('http://www.imdb.com/title/' + id + '/')
@@ -176,7 +178,7 @@ def get_movie_info_2(id, sleep_time=0):
     
 # test the function
 shawshank = get_movie_info('tt0111161')
-shawshank = get_movie_info_2('tt0111161',1) # do we need to use sleep time here?
+shawshank = get_movie_info_2('tt0111161', randint(0,9)) # do we need to use sleep time here?
 
 # open the file of IDs (one ID per row), and store the IDs in a list
 lines = [line.rstrip('\n') for line in open('imdb_ids.txt')]
@@ -185,7 +187,7 @@ import pandas as pd
 ids = pd.read_csv('imdb_ids.txt', delimiter="\t", header=None)
 
 # get the information for each movie, and store the results in a list
-id_info = [get_movie_info_2(id) for id in lines]
+id_info = [get_movie_info_2(id, randint(0,9)) for id in lines]
 
 # check that the list of IDs and list of movies are the same length
 len(id_info)
