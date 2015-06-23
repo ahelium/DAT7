@@ -162,8 +162,9 @@ def get_movie_info(id):
     return dict([("content_rating", content_rating), ('description', description), ('duration', duration), ('star_rating', star_rating), ('title',title) ])
 
 # or
-def get_movie_info_2(id):
+def get_movie_info_2(id, sleep_time=0):
     r = requests.get('http://www.imdb.com/title/' + id + '/')
+    sleep(sleep_time)
     b = BeautifulSoup(r.text)
     d = {}
     d['title'] = b.find(name='span', attrs={'itemprop':'name', 'class':'itemprop'}).text
@@ -175,7 +176,7 @@ def get_movie_info_2(id):
     
 # test the function
 shawshank = get_movie_info('tt0111161')
-shawshank = get_movie_info_2('tt0111161')
+shawshank = get_movie_info_2('tt0111161',1) # do we need to use sleep time here?
 
 # open the file of IDs (one ID per row), and store the IDs in a list
 lines = [line.rstrip('\n') for line in open('imdb_ids.txt')]
