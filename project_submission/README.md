@@ -23,7 +23,7 @@ Features (Round 2 or 3?)
 
 Questions:
 * I will need to make sure that I have an adequate number of people who churned and people who are still active, but I am not sure what time period I need to look at. Would it be best to pull information about a subscriber's first 30, 60, 90 days, and run a bunch of different things? 
-* We have many ways that subscribers are churned out of our DB. They are divided into to categories, Active Unsubscribes (someone pushing the 'unsubscribe me' button) and Innactive Unsubcribes (purged from our list a year after their last open). Should I treat these things as completely different datasets and run things on both of them? 
+* We have many ways that subscribers are churned out of our DB. I'd like to look at subs from two categories: Active Unsubscribes (someone pushing the 'unsubscribe me' button) and Innactive Unsubcribes (purged from our list a year after their last open). Should I treat these things as completely different datasets and run things on both of them? 
 
 
 
