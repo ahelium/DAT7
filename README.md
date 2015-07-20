@@ -292,7 +292,6 @@ Monday | Wednesday
 **Homework:**
 * If you aren't yet comfortable with all of the confusion matrix terminology, watch Rahul Patwari's videos on [Intuitive sensitivity and specificity](https://www.youtube.com/watch?v=U4_3fditnWg) (9 minutes) and [The tradeoff between sensitivity and specificity](https://www.youtube.com/watch?v=vtYDyGGeQyo) (13 minutes).
 * Video assignment on [ROC curves and AUC](homework/12_roc_auc.md)
-* Video assignment on [cross-validation](homework/12_cross_validation.md)
 
 **Resources:**
 * To go deeper into logistic regression, read the first three sections of Chapter 4 of [An Introduction to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/), or watch the [first three videos](http://www.dataschool.io/15-hours-of-expert-machine-learning-videos/) (30 minutes) from that chapter.
@@ -305,7 +304,7 @@ Monday | Wednesday
 -----
 
 ### Class 12: Advanced Model Evaluation
-* Advanced model evaluation ([notebook](http://nbviewer.ipython.org/github/justmarkham/DAT7/blob/master/notebooks/12_advanced_model_evaluation.ipynb))
+* Advanced model evaluation ([notebook](http://nbviewer.ipython.org/github/justmarkham/DAT7/blob/master/notebooks/12_advanced_model_evaluation.ipynb), [notebook code](code/12_advanced_model_evaluation_nb.py))
     * Null accuracy, handling missing values
     * Confusion matrix
     * Handling categorical features
@@ -313,8 +312,6 @@ Monday | Wednesday
     * Discuss the [video assignment](homework/12_roc_auc.md)
     * Exercise: drawing an ROC curve ([slides](slides/12_drawing_roc.pdf))
     * Return to the notebook
-* Cross-validation
-    * Discuss the [video assignment](homework/12_cross_validation.md) ([notebook](http://nbviewer.ipython.org/github/justmarkham/DAT7/blob/master/notebooks/12_cross_validation.ipynb), [notebook code](code/12_cross_validation_nb.py))
 
 **Homework:**
 * Your first project presentation is on Monday! Please submit a link to your project repository (with slides, code, data, and visualizations) before class using the submission form.
@@ -322,13 +319,96 @@ Monday | Wednesday
 **ROC Resources:**
 * Rahul Patwari has a great video on [ROC Curves](https://www.youtube.com/watch?v=21Igj5Pr6u4) (12 minutes).
 * [An introduction to ROC analysis](http://people.inf.elte.hu/kiss/13dwhdm/roc.pdf) is a very readable paper on the topic.
+* These [lesson notes](http://ebp.uga.edu/courses/Chapter%204%20-%20Diagnosis%20I/8%20-%20ROC%20curves.html) from a course at the University of Georgia include some simple, real-world examples of the use of ROC curves.
+* ROC curves can be used across a wide variety of applications, such as [comparing different feature sets](http://research.microsoft.com/pubs/205472/aisec10-leontjeva.pdf) for detecting fraudulent Skype users, and [comparing different classifiers](http://www.cse.ust.hk/nevinZhangGroup/readings/yi/Bradley_PR97.pdf) on a number of popular datasets.
 * This blog post about [Amazon Machine Learning](https://aws.amazon.com/blogs/aws/amazon-machine-learning-make-data-driven-decisions-at-scale/) contains a neat [graphic](https://media.amazonwebservices.com/blog/2015/ml_adjust_model_1.png) showing how classification threshold affects different evaluation metrics.
+* This short notebook demonstrates how ROC curves and AUC are only sensitive to the [rank ordering of predicted probabilities](http://nbviewer.ipython.org/github/justmarkham/DAT7/blob/master/notebooks/12_roc_auc_rank_ordering.ipynb).
+
+**Other Resources:**
+* scikit-learn has extensive documentation on [model evaluation](http://scikit-learn.org/stable/modules/model_evaluation.html).
+* Section 3.3.1 of [An Introduction to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/) (4 pages) has a great explanation of dummy encoding for categorical features.
+
+-----
+
+### Class 13: First Project Presentation
+* Project presentations!
+
+**Homework:**
+* Reading assignment on [spam filtering](homework/14_spam_filtering.md)
+* Read these [Introduction to Probability](https://docs.google.com/presentation/d/1cM2dVbJgTWMkHoVNmYlB9df6P2H8BrjaqAcZTaLe9dA/edit#slide=id.gfc3caad2_00) slides, or skim section 2.1 of the [OpenIntro Statistics textbook](https://www.openintro.org/stat/textbook.php) (12 pages). Pay specific attention to the following terms: probability, mutually exclusive, sample space, independent.
+* **Optional:** Try to gain an understanding of conditional probability from this [visualization](http://setosa.io/conditional/).
+* **Optional:** For an intuitive introduction to Bayes' theorem, read these posts on [wealth and happiness](http://www.quora.com/What-is-an-intuitive-explanation-of-Bayes-Rule/answer/Michael-Hochster), [ducks](https://planspacedotorg.wordpress.com/2014/02/23/bayes-rule-for-ducks/), or [legos](http://www.countbayesie.com/blog/2015/2/18/bayes-theorem-with-lego).
+
+-----
+
+### Class 14: Naive Bayes and Text Data
+* Conditional probability and Bayes' theorem
+    * [Slides](slides/14_bayes_theorem.pdf) (adapted from [Visualizing Bayes' theorem](http://oscarbonilla.com/2009/05/visualizing-bayes-theorem/))
+    * Applying Bayes' theorem to iris classification ([notebook](http://nbviewer.ipython.org/github/justmarkham/DAT7/blob/master/notebooks/14_bayes_theorem_iris.ipynb))
+* Naive Bayes classification
+    * [Slides](slides/14_naive_bayes.pdf)
+    * Example with spam filtering ([notebook](http://nbviewer.ipython.org/github/justmarkham/DAT7/blob/master/notebooks/14_naive_bayes_spam.ipynb))
+    * Discuss the reading assignment on [spam filtering](homework/14_spam_filtering.md)
+    * Classifying [SMS messages](https://archive.ics.uci.edu/ml/datasets/SMS+Spam+Collection) ([code](code/14_naive_bayes.py))
+
+**Homework:**
+* Confirm that you have [TextBlob](https://textblob.readthedocs.org/) installed by running `import textblob` from within your preferred Python environment. If it's not installed, run `pip install textblob` at the command line (not from within Python).
+* Complete the [Yelp review text homework](homework/14_yelp_text.md), and add a Python script (or IPython notebook) to your GitHub repo. This assignment is due on Monday.
+* There is a video/reading assignment on [cross-validation](homework/15_cross_validation.md), for those of you that have not already watched the video or would prefer a reading instead.
+
+**Resources:**
+* For more on conditional probability, read these [slides](https://docs.google.com/presentation/d/1psUIyig6OxHQngGEHr3TMkCvhdLInnKnclQoNUr4G4U/edit#slide=id.gfc69f484_00), or read section 2.2 of the [OpenIntro Statistics textbook](https://www.openintro.org/stat/textbook.php) (14 pages).
+* For an intuitive explanation of Naive Bayes classification, read this post on [airport security](http://www.quora.com/In-laymans-terms-how-does-Naive-Bayes-work/answer/Konstantin-Tt).
+* For more details on Naive Bayes classification, Wikipedia has two excellent articles ([Naive Bayes classifier](http://en.wikipedia.org/wiki/Naive_Bayes_classifier) and [Naive Bayes spam filtering](http://en.wikipedia.org/wiki/Naive_Bayes_spam_filtering)), and Cross Validated has a good [Q&A](http://stats.stackexchange.com/questions/21822/understanding-naive-bayes).
+* When applying Naive Bayes classification to a dataset with continuous features, it is best to use [GaussianNB](http://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.GaussianNB.html) rather than [MultinomialNB](http://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html). Wikipedia has a short [description](https://en.wikipedia.org/wiki/Naive_Bayes_classifier#Gaussian_naive_Bayes) of Gaussian Naive Bayes, as well as an excellent [example](https://en.wikipedia.org/wiki/Naive_Bayes_classifier#Sex_classification) of its usage.
+* These [slides](http://www.umiacs.umd.edu/~jbg/teaching/DATA_DIGGING/lecture_05.pdf) from the University of Maryland provide more mathematical details on both logistic regression and Naive Bayes, and also explain how Naive Bayes is actually a "special case" of logistic regression.
+* Andrew Ng has a [paper](https://cs.stanford.edu/people/ang//papers/nips01-discriminativegenerative.pdf) comparing the performance of logistic regression and Naive Bayes across a variety of datasets.
+* If you enjoyed Paul Graham's article, you can read [his follow-up article](http://www.paulgraham.com/better.html) on how he improved his spam filter and this [related paper](http://www.merl.com/publications/docs/TR2004-091.pdf) about state-of-the-art spam filtering in 2004.
+
+-----
+
+### Class 15: Natural Language Processing
+* Yelp review text homework due
+* Natural language processing
+    * [Notebook](http://nbviewer.ipython.org/github/justmarkham/DAT7/blob/master/notebooks/15_natural_language_processing.ipynb)
+    * Examples: [My text prediction app](https://justmarkham.shinyapps.io/textprediction/), and a [much better app](https://farsite.shinyapps.io/swiftkey-cap/)
+* Cross-validation
+    * Discuss the [video/reading assignment](homework/15_cross_validation.md) ([notebook](http://nbviewer.ipython.org/github/justmarkham/DAT7/blob/master/notebooks/15_cross_validation.ipynb), [notebook code](code/15_cross_validation_nb.py))
+* Introduction to our Kaggle competition
+    * Join the [competition](https://inclass.kaggle.com/c/dat7-stack-overflow) using the invitation link, download the sample submission, and then submit the sample submission (which will require SMS account verification).
+
+**Homework:**
+* Download the competition files, move them to the `DAT7/data` directory, and make sure you can open the CSV files using Pandas. If you have any problems opening the files, you probably need to turn off real-time virus scanning.
+* Come up with some theories about which features might be relevant to predicting the response, and then explore the data to see if those theories appear to be true.
+* **Optional:** Think about some features that might be worth creating from the data, and then figure out how to actually create those features.
+* **Optional:** Watch my [project presentation video](https://www.youtube.com/watch?v=HGr1yQV3Um0) (16 minutes) for a tour of the end-to-end machine learning process for a Kaggle competition, including the creation of new features. (Or, just read through the [slides](https://speakerdeck.com/justmarkham/allstate-purchase-prediction-challenge-on-kaggle).)
+
+**NLP Resources:**
+* If you want to learn a lot more NLP, check out the excellent [video lectures](https://class.coursera.org/nlp/lecture) and [slides](http://web.stanford.edu/~jurafsky/NLPCourseraSlides.html) from this [Coursera course](https://www.coursera.org/course/nlp) (which is no longer being offered).
+* This slide deck defines many of the [key NLP terms](https://github.com/ga-students/DAT_SF_9/blob/master/16_Text_Mining/DAT9_lec16_Text_Mining.pdf).
+* [Natural Language Processing with Python](http://www.nltk.org/book/) is the most popular book for going in-depth with the [Natural Language Toolkit](http://www.nltk.org/) (NLTK).
+* [A Smattering of NLP in Python](http://nbviewer.ipython.org/github/charlieg/A-Smattering-of-NLP-in-Python/blob/master/A%20Smattering%20of%20NLP%20in%20Python.ipynb) provides a nice overview of NLTK, as does this [notebook from DAT5](http://nbviewer.ipython.org/github/justmarkham/DAT5/blob/master/notebooks/14_nlp.ipynb).
+* [spaCy](https://honnibal.github.io/spaCy/) is a newer Python library for text processing that is focused on performance (unlike NLTK).
+* If you want to get serious about NLP, [Stanford CoreNLP](http://nlp.stanford.edu/software/corenlp.shtml) is a suite of tools (written in Java) that is highly regarded.
+* [DC Natural Language Processing](http://www.meetup.com/DC-NLP/) is an active Meetup group in our local area.
 
 **Cross-Validation Resources:**
-* scikit-learn has extensive documentation on [model evaluation](http://scikit-learn.org/stable/modules/model_evaluation.html).
 * For more on cross-validation, read section 5.1 of [An Introduction to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/) (11 pages) or watch the related videos: [K-fold and leave-one-out cross-validation](https://www.youtube.com/watch?v=nZAM5OXrktY) (14 minutes), [cross-validation the right and wrong ways](https://www.youtube.com/watch?v=S06JpVoNaA0) (10 minutes).
 * [Accurately Measuring Model Prediction Error](http://scott.fortmann-roe.com/docs/MeasuringError.html) compares adjusted R-squared, AIC and BIC, train/test split, and cross-validation.
 * If you want to understand the different variations of cross-validation, this [paper](http://www.jcheminf.com/content/pdf/1758-2946-6-10.pdf) examines and compares them in detail.
 
-**Other Resources:**
-* Section 3.3.1 of [An Introduction to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/) (4 pages) has a great explanation of dummy encoding for categorical features.
+-----
+
+### Class 16: Kaggle Competition
+* Overview of how Kaggle works (slides)
+* Kaggle In-Class competition: [Predict whether a Stack Overflow question will be closed](https://inclass.kaggle.com/c/dat7-stack-overflow)
+
+**Homework:**
+* Your draft paper is due on Monday! Please submit a link to your project repository (with paper, code, data, and visualizations) before class using the submission form.
+* **Optional:** Keep working on this competition! You can make up to 5 submissions per day, and the competition doesn't close until 6:30pm ET on Wednesday, August 5 (class 20).
+
+**Resources:**
+* For a great overview of the diversity of problems tackled by Kaggle competitions, watch [Kaggle Transforms Data Science Into Competitive Sport](https://www.youtube.com/watch?v=8w4UY66GKcM) (28 minutes) by Jeremy Howard (past president of Kaggle).
+* [Getting in Shape for the Sport of Data Science](https://www.youtube.com/watch?v=kwt6XEh7U3g) (74 minutes), also by Jeremy Howard, contains a lot of tips for competitive machine learning.
+* [Learning from the best](http://blog.kaggle.com/2014/08/01/learning-from-the-best/) is an excellent blog post covering top tips from Kaggle Masters on how to do well on Kaggle.
+* [Feature Engineering Without Domain Expertise](https://www.youtube.com/watch?v=bL4b1sGnILU) (17 minutes), a talk by Kaggle Master Nick Kridler, provides some simple advice about how to iterate quickly and where to spend your time during a Kaggle competition.

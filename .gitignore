@@ -1,6 +1,10 @@
 .ipynb_checkpoints/
 .DS_Store
 *.pyc
+<<<<<<< HEAD
 
 # PyCharm metadata
 .idea
+=======
+extras/
+>>>>>>> ce4ef97319d743ecfce96115ddeeae49663c86f6
