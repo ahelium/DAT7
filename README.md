@@ -258,6 +258,7 @@ Monday | Wednesday
 * For a recap of much of today's lesson, watch [Comparing machine learning models in scikit-learn](https://www.youtube.com/watch?v=0pP4EwWJgIU) (27 minutes).
 * For another explanation of training error versus testing error, the bias-variance tradeoff, and train/test split (also known as the "validation set approach"), watch Hastie and Tibshirani's video on [estimating prediction error](https://www.youtube.com/watch?v=_2ij6eaaSl0&t=2m34s) (12 minutes, starting at 2:34).
 * Caltech's Learning From Data course includes a fantastic video on [visualizing bias and variance](http://work.caltech.edu/library/081.html) (15 minutes).
+* [Random Test/Train Split is Not Always Enough](http://www.win-vector.com/blog/2015/01/random-testtrain-split-is-not-always-enough/) explains why random train/test split may not be a suitable model evaluation procedure if your data has a significant time element.
 
 -----
 
@@ -368,17 +369,15 @@ Monday | Wednesday
 -----
 
 ### Class 15: Natural Language Processing
-* Yelp review text homework due
-* Natural language processing
-    * [Notebook](http://nbviewer.ipython.org/github/justmarkham/DAT7/blob/master/notebooks/15_natural_language_processing.ipynb)
-    * Examples: [My text prediction app](https://justmarkham.shinyapps.io/textprediction/), and a [much better app](https://farsite.shinyapps.io/swiftkey-cap/)
+* Yelp review text homework due ([solution](code/14_yelp_text.py))
+* Natural language processing ([notebook](http://nbviewer.ipython.org/github/justmarkham/DAT7/blob/master/notebooks/15_natural_language_processing.ipynb), [notebook code](code/15_natural_language_processing_nb.py))
 * Cross-validation
     * Discuss the [video/reading assignment](homework/15_cross_validation.md) ([notebook](http://nbviewer.ipython.org/github/justmarkham/DAT7/blob/master/notebooks/15_cross_validation.ipynb), [notebook code](code/15_cross_validation_nb.py))
 * Introduction to our Kaggle competition
-    * Join the [competition](https://inclass.kaggle.com/c/dat7-stack-overflow) using the invitation link, download the sample submission, and then submit the sample submission (which will require SMS account verification).
+    * Create a [Kaggle](https://www.kaggle.com/) account, join the [competition](https://inclass.kaggle.com/c/dat7-stack-overflow) using the invitation link, download the sample submission, and then submit the sample submission (which will require SMS account verification).
 
 **Homework:**
-* Download the competition files, move them to the `DAT7/data` directory, and make sure you can open the CSV files using Pandas. If you have any problems opening the files, you probably need to turn off real-time virus scanning.
+* Download the competition files, move them to the `DAT7/data` directory, and make sure you can open the CSV files using Pandas. If you have any problems opening the files, you probably need to turn off real-time virus scanning (especially Microsoft Security Essentials).
 * Come up with some theories about which features might be relevant to predicting the response, and then explore the data to see if those theories appear to be true.
 * **Optional:** Think about some features that might be worth creating from the data, and then figure out how to actually create those features.
 * **Optional:** Watch my [project presentation video](https://www.youtube.com/watch?v=HGr1yQV3Um0) (16 minutes) for a tour of the end-to-end machine learning process for a Kaggle competition, including the creation of new features. (Or, just read through the [slides](https://speakerdeck.com/justmarkham/allstate-purchase-prediction-challenge-on-kaggle).)
@@ -400,8 +399,9 @@ Monday | Wednesday
 -----
 
 ### Class 16: Kaggle Competition
-* Overview of how Kaggle works (slides)
-* Kaggle In-Class competition: [Predict whether a Stack Overflow question will be closed](https://inclass.kaggle.com/c/dat7-stack-overflow)
+* Overview of how Kaggle works ([slides](slides/16_kaggle.pdf))
+* Kaggle In-Class competition: [Predict whether a Stack Overflow question will be closed](https://inclass.kaggle.com/c/dat7-stack-overflow) ([code](code/16_kaggle.py))
+    * [Explanations of log loss](http://www.quora.com/What-is-an-intuitive-explanation-for-the-log-loss-function)
 
 **Homework:**
 * Your draft paper is due on Monday! Please submit a link to your project repository (with paper, code, data, and visualizations) before class using the submission form.
@@ -412,3 +412,4 @@ Monday | Wednesday
 * [Getting in Shape for the Sport of Data Science](https://www.youtube.com/watch?v=kwt6XEh7U3g) (74 minutes), also by Jeremy Howard, contains a lot of tips for competitive machine learning.
 * [Learning from the best](http://blog.kaggle.com/2014/08/01/learning-from-the-best/) is an excellent blog post covering top tips from Kaggle Masters on how to do well on Kaggle.
 * [Feature Engineering Without Domain Expertise](https://www.youtube.com/watch?v=bL4b1sGnILU) (17 minutes), a talk by Kaggle Master Nick Kridler, provides some simple advice about how to iterate quickly and where to spend your time during a Kaggle competition.
+* These examples may help you to better understand the process of feature engineering: predicting the number of [passengers at a train station](https://medium.com/@chris_bour/french-largest-data-science-challenge-ever-organized-shows-the-unreasonable-effectiveness-of-open-8399705a20ef), identifying [fraudulent users of an online store](https://docs.google.com/presentation/d/1UdI5NY-mlHyseiRVbpTLyvbrHxY8RciHp5Vc-ZLrwmU/edit#slide=id.p), identifying [bots in an online auction](https://www.kaggle.com/c/facebook-recruiting-iv-human-or-bot/forums/t/14628/share-your-secret-sauce), predicting who will [subscribe to the next season of an orchestra](http://blog.kaggle.com/2015/01/05/kaggle-inclass-stanfords-getting-a-handel-on-data-science-winners-report/), and evaluating the [quality of e-commerce search engine results](http://blog.kaggle.com/2015/07/22/crowdflower-winners-interview-3rd-place-team-quartet/).
